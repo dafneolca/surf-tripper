@@ -1,3 +1,41 @@
-<p>
-  signup works!
-</p>
+<P>SIGN UP COMPONENT</P>
+
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+  <p> Name:
+    <input type="text" name="userName" [(ngModel)]="userName" required />
+  </p>
+
+  <p> Level of surf:
+    <select name="surfLevel" required>
+      <option value="level1">Level 1 (Beginner)</option>
+      <option value="level2">Level 2 (Advanced beginner)</option>
+      <option value="level3">Level 3 (Intermediate)</option>
+      <option value="level1">Level 4 (Advanced)/option>
+    </select>
+  </p>
+
+  <p> Description:
+    <input type="text" name="description" [(ngModel)]="description" required />
+  </p>
+
+  <p> Email Address:
+    <input type="text" name="emailAddress" [(ngModel)]="emailAddress" required />
+  </p>
+
+  <p> Password:
+    <input type="password" name="password" [(ngModel)]="password" required #userPassword="ngModel" minlength="6" />
+  </p>
+
+  <div *ngIf="userPassword.errors && (userPassword.dirty || userPassword.touched)">
+    <p class="error" [hidden]="!userPassword.errors.minlength">
+      Password must be at least 6 characters.
+    </p>
+  </div>
+
+
+
+  <div>
+  </div>
+  <button type="submit"> Sign Up </button>
+</form>

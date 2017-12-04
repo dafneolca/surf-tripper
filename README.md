@@ -1,27 +1,31 @@
 # SurfTripper
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+#Login
+As a registered user I want to be able to log in
 
-## Development server
+#See Upcoming trips
+As a registered or non registered user I want to be able to see trips that are upcoming and have been created by other users
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#See Upcoming trip details
+As a registered or non registered user I want to be able to see the details of each upcoming trip from the "Upcoming Trips" view 
 
-## Code scaffolding
+#Join Upcoming trip 
+As a registered user I want to be able to join a created trip
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#Cancel attendance of upcoming trip 
+As a registered user I want to to be able to cancel trips I have registered to attend
 
-## Build
+#Create Upcoming trip 
+As a registered user I want to be able to create an upcoming trip.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+#Cancel Upcoming trip 
+As an event creater, I want to cancel a trip I have created.
 
-## Running unit tests
+#See User Profile
+As a registered user I want to be able to see my profile, as well as the profile of other users.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#BASICS DONE: SEE COMMENTS:
+#Sign up
+As a none registered user I want to be able to sign up.
+TO DO: CONNECT DATA TO DB - IMPROVE DESCRIPTION + IMPROVE CSS
