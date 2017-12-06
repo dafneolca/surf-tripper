@@ -11,10 +11,11 @@ font-family: helvetica;
 }
 
 h1 {
-    background-color:skyblue;
-    color: white;
+    color: rgb(239, 231, 208);
     text-align: center;
     font-family: helvetica;
+    font-family: 'Amatic SC', cursive;
+    font-size: 80px;
 }
 
 

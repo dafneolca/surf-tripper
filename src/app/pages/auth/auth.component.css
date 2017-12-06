@@ -1,16 +1,21 @@
 button {
   font-size: 50px;
   display: flex;
-  background-color: skyblue;
+  background-color:rgb(123,212,213);
   padding: 10px;
-  margin: 40px 0px;
+  margin: 20px 0px;
   width: 80%;
-  text-align: center;
-  color: white;
+  color: rgb(239, 231, 208);
+  align-items: center;
+  justify-content: center;
+  height: 150px;
 }
 
+
+
+
 .page {
-  background-color: black;
+
   display: flex;
   justify-content: center;
   align-items: center;
