@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { RouterModule, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-auth',
@@ -9,16 +11,19 @@ import { SignupComponent } from './signup/signup.component';
 })
 export class AuthComponent implements OnInit {
 
+    constructor(private router: Router) { }
+
+
     onClickLogin() {
-        // redirect to log in window
+        this.router.navigate(['auth/login']);
         console.log('login');
     }
 
     onClickSignup() {
-        // redirect to sign up window
+        this.router.navigate(['auth/signup']);
         console.log('signup');
     }
-    constructor() { }
+
 
     ngOnInit() {
     }

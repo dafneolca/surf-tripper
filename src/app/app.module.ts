@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 
+
 import { AppComponent } from './app.component';
 
 // Pages
@@ -20,6 +21,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
 import { UpcomingComponent } from './components/trip/upcoming/upcoming.component';
 import { CreatedComponent } from './components/trip/created/created.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const routes: Routes = [
@@ -39,7 +41,8 @@ const routes: Routes = [
     CreateComponent,
     ProfileComponent,
     DetailComponent,
-    TripsComponent
+    TripsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

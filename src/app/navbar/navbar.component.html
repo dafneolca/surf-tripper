@@ -1,0 +1,27 @@
+<p>
+  navbar works!
+</p>
+
+
+<!-- ----------------- NAV BAR START ----------------- -->
+
+<div *ngIf="!login">..
+  <!-- if user is logged in -->
+  <div class="topnav" id="myTopnav">
+    <a href=".">Trips</a>
+    <a href=".">Create</a>
+    <a href=".">Profile</a>
+    <a href=".">Logout</a>
+  </div>
+
+</div>
+
+<!-- if user is not logged in -->
+
+<div class="topnav" id="myTopnav">
+  <a href=".">Trips</a>
+  <a href="auth/auth">Register/Login</a>
+
+</div>
+
+<!-- ----------------- NAV BAR END ----------------- -->
