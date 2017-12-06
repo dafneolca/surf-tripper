@@ -1,0 +1,33 @@
+<h1>Create a trip</h1>
+
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+
+
+  <p> Location:
+    <input type="text" name="location" [(ngModel)]="location" required />
+  </p>
+
+  <p> Start Date:
+    <input type="startDate" name="startDate" [(ngModel)]="startDate" required />
+  </p>
+
+  <p> Duration:
+    <input type="number" name="duration" [(ngModel)]="duration" required />
+  </p>
+
+  <p> Cost:
+    <input type="number" name="cost" [(ngModel)]="cost" required />
+  </p>
+
+  <p> Number of Spots Available:
+    <input type="number" name="availableSpots" [(ngModel)]="availableSpots" required />
+  </p>
+
+
+
+  <button type="submit"> Create Event </button>
+
+
+
+</form>

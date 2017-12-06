@@ -1,0 +1,35 @@
+.topnav {
+background-color:skyblue;
+display: flex;
+justify-content: space-around;
+font-family: helvetica;
+}
+
+.topnav a {
+    color: white;
+    font: helvetica;
+}
+
+h1 {
+    background-color:skyblue;
+    color: white;
+    text-align: center;
+    font-family: helvetica;
+}
+
+
+#login-button {
+    font-size: 30px;
+    color: darkblue;
+    background-color: lightblue;
+    padding: 20px;
+    width: 280px;
+}
+
+#signup-button {
+    font-size: 30px;
+    color: darkblue;
+    background-color: lightblue;
+    padding: 20px;
+    width: 280px;
+}

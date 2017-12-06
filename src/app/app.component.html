@@ -1,16 +1,18 @@
 <h1>
-  Welcome to {{ title }}!
+  {{ title }}
 </h1>
+<!-- ----------------- NAV BAR START ----------------- -->
 
+<div *ngIf="!login">..
+  <!-- if user is logged in -->
+  <div class="topnav" id="myTopnav">
+    <a class="active" href="#home">Home</a>
+    <a href=".">Trips</a>
+    <a href=".">Create</a>
+    <a href=".">Profile</a>
+    <a href=".">Logout</a>
+  </div>
 
-<!-- ----------------------------------------------- NAV BAR ----------------------------------------------- -->
-<!-- if user is logged in -->
-<div class="topnav" id="myTopnav">
-  <a class="active" href="#home">Home</a>
-  <a href=".">Trips</a>
-  <a href=".">Create</a>
-  <a href=".">Profile</a>
-  <a href=".">Logout</a>
 </div>
 
 <!-- if user is not logged in -->
@@ -18,7 +20,10 @@
 <div class="topnav" id="myTopnav">
   <a class="active" href="#home">Home</a>
   <a href=".">Trips</a>
-  <a href=".">Register/Login</a>
+  <a href="auth/auth">Register/Login</a>
+
 </div>
 
-<app-signup></app-signup>
+<!-- ----------------- NAV BAR END ----------------- -->
+
+<router-outlet></router-outlet>

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  login = true;
   title = 'Surf Tripper';
+
+  loadLogin() {
+    console.log('logging in');
+  }
+
+  loadSignup() {
+    console.log('sign up');
+  }
 }

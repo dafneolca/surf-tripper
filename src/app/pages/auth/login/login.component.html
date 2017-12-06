@@ -1,0 +1,14 @@
+<P>LOGIN COMPONENT</P>
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+
+  <p> Email Address:
+    <input type="text" name="emailAddress" [(ngModel)]="emailAddress" required />
+  </p>
+
+  <p> Password:
+    <input type="password" name="password" [(ngModel)]="password" required #userPassword="ngModel" minlength="6" />
+  </p>
+
+  <button type="submit"> Log In </button>
+</form>
