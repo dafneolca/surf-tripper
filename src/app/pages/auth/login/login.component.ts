@@ -8,7 +8,6 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loggedIn = false;
-
   constructor(private router: Router) { }
 
   ngOnInit() {

@@ -1,10 +1,17 @@
 <h1>
   Upcoming Trips
-  <h1>
+</h1>
 
-    <div id="upcoming-trips">
-      <div id="trip">
-        <p> Trip to the northshore</p>
-      </div>
+<div id="upcoming-trips">
+  <p>starts here</p>
+  <h5> Upcoming Trips </h5>
+  <ul class="list">
 
-    </div>
+    <li *ngFor="let trip of trips">
+      <p> {{ trip.description }} </p>
+      <a [routerLink]="['/trip', trip._id]"> View Details </a>
+    </li>
+
+  </ul>
+
+</div>
