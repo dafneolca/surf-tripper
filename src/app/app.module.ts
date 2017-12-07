@@ -27,7 +27,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 const routes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'auth/login', component: LoginComponent },
-  { path: 'auth/signup', component: SignupComponent }
+  { path: 'auth/signup', component: SignupComponent },
+  { path: 'trips', component: TripsComponent },
+  { path: 'create', component: CreateComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({

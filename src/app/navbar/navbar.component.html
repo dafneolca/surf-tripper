@@ -1,16 +1,11 @@
-<p>
-  navbar works!
-</p>
-
-
 <!-- ----------------- NAV BAR START ----------------- -->
 
-<div *ngIf="!login">..
+<div *ngIf="!login">
   <!-- if user is logged in -->
   <div class="topnav" id="myTopnav">
-    <a href=".">Trips</a>
-    <a href=".">Create</a>
-    <a href=".">Profile</a>
+    <a href="trips">Trips</a>
+    <a href="create">Create</a>
+    <a href="profile">Profile</a>
     <a href=".">Logout</a>
   </div>
 
@@ -19,8 +14,8 @@
 <!-- if user is not logged in -->
 
 <div class="topnav" id="myTopnav">
-  <a href=".">Trips</a>
-  <a href="auth/auth">Register/Login</a>
+  <a href="trips">Trips</a>
+  <a href="/">Register/Login</a>
 
 </div>
 
