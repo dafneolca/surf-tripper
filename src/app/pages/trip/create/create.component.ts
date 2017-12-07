@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TripService } from '../../../services/trip.service';
 
 @Component({
   selector: 'app-create',
@@ -7,17 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  // onClickCreate() {
-  //   console.log('created');
-  // }
-
   submitForm(myForm) {
     console.log(myForm);
     console.log('Submitted');
+    this.tripService.createNewTrip(myForm.value);
   }
 
 
-  constructor() { }
+  constructor(private tripService: TripService) { }
+
 
   ngOnInit() {
   }

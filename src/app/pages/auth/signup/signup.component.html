@@ -1,18 +1,13 @@
 <P>SIGN UP COMPONENT</P>
 
 
-<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+<form (ngSubmit)="signUpUser(newUser)" #newUser="ngForm" novalidate>
   <p> Name:
     <input type="text" name="userName" [(ngModel)]="userName" required />
   </p>
 
   <p> Level of surf:
-    <select name="surfLevel" required>
-      <option value="level1">Level 1 (Beginner)</option>
-      <option value="level2">Level 2 (Advanced beginner)</option>
-      <option value="level3">Level 3 (Intermediate)</option>
-      <option value="level1">Level 4 (Advanced)/option>
-    </select>
+    <input type="text" name="experienceLevel" [(ngModel)]="experienceLevel" required />
   </p>
 
   <p> Description:
