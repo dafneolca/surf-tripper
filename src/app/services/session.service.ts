@@ -15,6 +15,10 @@ export class SessionService {
 
   }
 
+  get(id) {
+    return this.httpClient.get(`${this.BASE_URL}/user/${id}`);
+  }
+
   login(user) {
     return this.httpClient.post(`${this.BASE_URL}/auth/login`, user);
     // .map(res => res.json())

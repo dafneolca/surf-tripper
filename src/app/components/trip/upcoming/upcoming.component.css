@@ -1,0 +1,27 @@
+#upcoming-trips{
+
+  justify-content: center;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  padding-right: 35px;
+  /* display: flex;
+  align-self: center; */
+  }
+
+  li {
+    background: 36D1DC;
+    background: -webkit-linear-gradient(left, 36D1DC , 5B86E5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, 36D1DC, 5B86E5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, 36D1DC, 5B86E5); /
+    background-color:linear-gradient(to right,#36D1DC,
+     #5B86E5);
+
+
+  }

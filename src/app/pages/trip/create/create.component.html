@@ -1,14 +1,15 @@
 <app-navbar></app-navbar>
-<h1>Create a trip</h1>
+<h2>Create a trip</h2>
 
 
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
 
 
-  <p>Place:
+  <p>Place: </p>
+  <p>
     <input type="text" name="place" [(ngModel)]="place" required />
   </p>
-
+  <!-- 
   <p>Lng:
     <input type="number" name="lng" [(ngModel)]="lng" required />
   </p>
@@ -16,21 +17,25 @@
 
   <p>Lat:
     <input type="number" name="lat" [(ngModel)]="lat" required />
-  </p>
+  </p> -->
 
-  <p> Start Date:
+  <p> Start Date:</p>
+  <p>
     <input type="date" name="startDate" [(ngModel)]="startDate" required />
   </p>
 
-  <p> End Date:
+  <p> End Date: </p>
+  <p>
     <input type="date" name="endDate" [(ngModel)]="endDate" required />
   </p>
 
-  <p> Cost:
+  <p> Cost: </p>
+  <p>
     <input type="number" name="cost" [(ngModel)]="cost" required />
   </p>
 
-  <p> Number of Spots Available:
+  <p> Number of Spots Available: </p>
+  <p>
     <input type="number" name="availableSpots" [(ngModel)]="availableSpots" required />
   </p>
 

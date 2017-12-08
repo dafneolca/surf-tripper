@@ -1,15 +1,17 @@
-<h1>
+<h3>
   Upcoming Trips
-</h1>
+</h3>
 
 <div id="upcoming-trips">
-  <p>starts here</p>
-  <h5> Upcoming Trips </h5>
+
   <ul class="list">
 
     <li *ngFor="let trip of trips">
-      <p> {{ trip.place }} {{ trip.startDate }} </p>
-      <!-- <a [routerLink]="['/trip/]"> View Details </a> -->
+
+      <p> {{ trip.place }}</p>
+      <p> {{ trip.startDate | date:'dd/MM/yy' }} - {{ trip.endDate | date:'dd/MM/yy' }} </p>
+      <a href="['/trip/]"> View Details </a>
+
     </li>
 
   </ul>

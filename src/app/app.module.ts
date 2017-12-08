@@ -33,7 +33,8 @@ const routes: Routes = [
   { path: 'trips', component: TripsComponent },
   { path: 'trips/:id', component: DetailComponent },
   { path: 'create', component: CreateComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:id', component: ProfileComponent },
 ];
 
 @NgModule({
