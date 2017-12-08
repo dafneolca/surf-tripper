@@ -8,7 +8,7 @@
   <ul class="list">
 
     <li *ngFor="let trip of trips">
-      <p> {{ trip.description }} </p>
+      <p> {{ trip.place }} {{ trip.startDate }} </p>
       <a [routerLink]="['/trip', trip._id]"> View Details </a>
     </li>
 

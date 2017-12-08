@@ -3,9 +3,17 @@
 
 
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+
+
+  <p>Place:
+    <input type="text" name="place" [(ngModel)]="place" required />
+  </p>
+
   <p>Lng:
     <input type="number" name="lng" [(ngModel)]="lng" required />
   </p>
+
+
   <p>Lat:
     <input type="number" name="lat" [(ngModel)]="lat" required />
   </p>
@@ -14,7 +22,7 @@
     <input type="date" name="startDate" [(ngModel)]="startDate" required />
   </p>
 
-  <p> Duration:
+  <p> End Date:
     <input type="date" name="endDate" [(ngModel)]="endDate" required />
   </p>
 
