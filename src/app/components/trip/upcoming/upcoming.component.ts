@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TripService } from '../../../services/trip.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-upcoming',
@@ -9,12 +11,13 @@ import { TripService } from '../../../services/trip.service';
 export class UpcomingComponent implements OnInit {
   trips;
 
-  constructor(private trip: TripService) { }
+  constructor(private tripService: TripService, private router: Router) { }
 
   ngOnInit() {
-    this.trip.getList()
-      .subscribe((trips) => {
-        this.trips = trips;
+    this.tripService.getList()
+      .subscribe((data) => {
+        this.trips = data;
+        console.log(data);
       });
   }
 

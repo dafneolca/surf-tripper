@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
-import { UserService } from '../../../services/user.service';
+import { SessionService } from '../../../services/session.service';
+import { HttpModule } from '@angular/http';
+
 
 @Component({
   selector: 'app-signup',
-  providers: [UserService],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 
 export class SignupComponent implements OnInit {
+  constructor(private router: Router, private sessionService: SessionService) { }
+
   signUpUser(newUser) {
-    console.log(newUser);
-    console.log('Submitted');
-    this.userService.createNewUser(newUser.value);
+    this.sessionService.signup(newUser.value).subscribe();
     this.router.navigate(['trips']);
   }
-
-  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
   }

@@ -1,24 +1,27 @@
-<P>SIGN UP COMPONENT</P>
-
-
 <form (ngSubmit)="signUpUser(newUser)" #newUser="ngForm" novalidate>
-  <p> Name:
-    <input type="text" name="userName" [(ngModel)]="userName" required />
+  <P id="signup">SIGN UP</P>
+  <p> User Name: </p>
+  <p>
+    <input type="text" name="username" [(ngModel)]="username" required />
   </p>
 
-  <p> Level of surf:
+  <p> Level of surf:</p>
+  <p>
     <input type="text" name="experienceLevel" [(ngModel)]="experienceLevel" required />
   </p>
 
-  <p> Description:
+  <p> Description:</p>
+  <p>
     <input type="text" name="description" [(ngModel)]="description" required />
   </p>
 
-  <p> Email Address:
-    <input type="text" name="emailAddress" [(ngModel)]="emailAddress" required />
+  <p> Email Address:</p>
+  <p>
+    <input type="email" name="email" [(ngModel)]="email" required />
   </p>
 
-  <p> Password:
+  <p> Password:</p>
+  <p>
     <input type="password" name="password" [(ngModel)]="password" required #userPassword="ngModel" minlength="6" />
   </p>
 

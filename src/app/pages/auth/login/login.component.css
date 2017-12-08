@@ -25,3 +25,7 @@ button {
     text-decoration: none;
     vertical-align: middle;
 }
+
+input {
+  width: 80%;
+}

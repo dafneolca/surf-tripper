@@ -23,6 +23,7 @@ import { SignupComponent } from './pages/auth/signup/signup.component';
 import { UpcomingComponent } from './components/trip/upcoming/upcoming.component';
 import { CreatedComponent } from './components/trip/created/created.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SessionService } from './services/session.service';
 
 
 const routes: Routes = [
@@ -55,7 +56,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [TripService],
+  providers: [TripService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,16 +1,17 @@
 # To Do THURSDAY:
 
-# display trips in "see all trips" section
+
 
 
 
 #### USER STORIES - SurfTripper
 
-# See Upcoming trips
-As a registered or non registered user I want to be able to see trips that are upcoming and have been created by other users
+# Login
+As a registered user I want to be able to log in
 
-# See Upcoming trip details
-As a registered or non registered user I want to be able to see the details of each upcoming trip from the "Upcoming Trips" view 
+# Sign up
+As a none registered user I want to be able to sign up.
+TO DO: CONNECT DATA TO DB - IMPROVE DESCRIPTION + IMPROVE CSS
 
 # Join Upcoming trip 
 As a registered user I want to be able to join a created trip
@@ -31,16 +32,13 @@ As a registered user I want to be able to see my profile, as well as the profile
 
 
 # BASICS DONE: SEE COMMENTS:
-# Sign up
-As a none registered user I want to be able to sign up.
-TO DO: CONNECT DATA TO DB - IMPROVE DESCRIPTION + IMPROVE CSS
+
 
 # Create Upcoming trip 
 As a registered user I want to be able to create an upcoming trip.
 TO DO: create trip ONLY if registered
 
-# Login
-As a registered user I want to be able to log in
+
 
 
 
@@ -56,3 +54,14 @@ save data to backend to create user
 
 # Log In Component:
 save data from login component
+
+#REALLY DONE AND WORKING (ON FRIDAY)
+
+# display trips in "see all trips" section
+
+
+# See Upcoming trips
+As a registered or non registered user I want to be able to see trips that are upcoming and have been created by other users
+
+# See Upcoming trip details
+As a registered or non registered user I want to be able to see the details of each upcoming trip from the "Upcoming Trips" view 
