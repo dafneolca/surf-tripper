@@ -18,13 +18,16 @@ As a registered user I want to be able to join a created trip
 # Cancel attendance of upcoming trip 
 As a registered user I want to to be able to cancel trips I have registered to attend
 
-
-
 # Cancel Upcoming trip 
 As an event creater, I want to cancel a trip I have created.
 
 # See User Profile
 As a registered user I want to be able to see my profile, as well as the profile of other users.
+
+
+
+
+
 
 
 # BASICS DONE: SEE COMMENTS:
