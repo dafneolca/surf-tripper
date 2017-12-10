@@ -1,10 +1,33 @@
 <h2> Trip to: {{ trip?.place }} </h2>
-<p>{{ trip?.startDate }}</p>
-<p>{{ trip?.endDate }}</p>
+<p>Start Date: </p>
+<p> {{ trip?.startDate | date:'dd/MM/yy' }}</p>
+
+<p>End Date: </p>
+<p> {{ trip?.endDate | date:'dd/MM/yy' }}</p>
+
+<p>Created by: </p>
 <p>{{ trip?.owner }}</p>
+
+<p>Description: </p>
 <p>{{ trip?.description }}</p>
+
+<p>Attendees: </p>
+<ul>
+  <li *ngFor="let attendee of attendees">
+    {{attendee}}
+  </li>
+
+</ul>
+
+
 <p>{{ trip?.attendees }}</p>
 
 
 
-<h3>Join Trip!</h3>
+<div *ngIf="attendingTrip===true ">
+  <button (click)="cancelTrip()">Cancel Trip</button>
+</div>
+
+<div *ngIf="attendingTrip==false ">
+  <button (click)="joinTrip()">Join Trip</button>
+</div>

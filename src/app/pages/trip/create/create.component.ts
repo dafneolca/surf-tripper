@@ -9,11 +9,14 @@ import { RouterModule, Router } from '@angular/router';
 })
 
 export class CreateComponent implements OnInit {
+  owner;
+
   submitForm(myForm) {
     console.log(myForm);
     console.log('Submitted');
     this.tripService.createNewTrip(myForm.value);
     this.router.navigate(['trips']);
+    // this.owner = createReadStream.id   --> get this owner to be the user id of creator
   }
 
 

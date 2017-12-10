@@ -10,7 +10,11 @@
 
       <p> {{ trip.place }}</p>
       <p> {{ trip.startDate | date:'dd/MM/yy' }} - {{ trip.endDate | date:'dd/MM/yy' }} </p>
-      <a href="['/trip/]"> View Details </a>
+      <!-- 
+      <a href="trips/{{trips._id}}">See Details</a> -->
+
+      <a [routerLink]="['/trips', trip._id]">See Details</a>
+
 
     </li>
 
