@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TripService } from '../../../services/trip.service';
 import { SessionService } from '../../../services/session.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -11,22 +12,32 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class DetailComponent implements OnInit {
-  trip: {
-    owner: 'owner Id here'
-  };
+  trip;
+  place = null;
   attendingTrip = false;
   attendees = ['Attendee 1', 'attendee 2'];
-  user;  // LOGGED IN USER
+  user = null;
+  availableSpaces = 10;
+  // tripJoined = 'You have joined the trip';
+
+  constructor(
+    private sessionService: SessionService,
+    private route: ActivatedRoute,
+    private tripService: TripService,
+    private router: Router) { }
 
 
-  constructor(private route: ActivatedRoute, private tripService: TripService) { }
 
+  back() {
+    this.router.navigate(['trips']);
+  }
 
   joinTrip() {
     // On click ->logged in user is pushed into array of attendees.
-    console.log('Trip Joined');
-    this.attendingTrip = true;
     // $scope.attendees.push($scope.form);
+    this.attendingTrip = true;
+    this.availableSpaces--;
+    this.user = this.sessionService.getUser();
     this.attendees.push(this.user);
 
   }
@@ -35,6 +46,9 @@ export class DetailComponent implements OnInit {
     // remove attendee from user array
     console.log('You are no longer part of this trip');
     this.attendingTrip = false;
+    this.attendees.splice(0, 1);
+    this.availableSpaces++;
+
   }
 
   ngOnInit() {
@@ -42,6 +56,7 @@ export class DetailComponent implements OnInit {
       this.tripService.get(params['id'])
         .subscribe((data) => {
           this.trip = data;
+          console.log(this.trip);
         });
     });
   }

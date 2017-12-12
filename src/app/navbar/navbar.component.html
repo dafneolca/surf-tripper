@@ -1,21 +1,28 @@
 <!-- ----------------- NAV BAR START ----------------- -->
-
+<p>Hello, {{user?.username}}</p>
 <div *ngIf="!login">
   <!-- if user is logged in -->
   <div class="topnav" id="myTopnav">
-    <a href="trips">Trips</a>
-    <a href="create">Create</a>
-    <a href="profile">Profile</a>
-    <a href=".">Logout</a>
+    <a [routerLink]="['/trips']">Trips</a>
+    <a [routerLink]="['/create']">Create</a>
+    <a [routerLink]="['/profile']">Profile</a>
+    <!--profile/{{user._id}}-->
+
+    <!-- Link below not working -->
+    <!-- <a [routerLink]="['/profile', users._id]">Profile</a> -->
+    <button (click)="logout()">Logout</button>
   </div>
+
+
+  <!-- <li *ngFor="let trip of trips " a [routerLink]="[ '/trips', trip._id] "> -->
 
 </div>
 
 <!-- if user is not logged in -->
 
-<!-- <div class="topnav" id="myTopnav">
-  <a href="trips">Trips</a>
-  <a href="/">Register/Login</a>
+<!-- <div class="topnav " id="myTopnav ">
+  <a href="trips ">Trips</a>
+  <a href="/ ">Register/Login</a>
 
 </div> -->
 

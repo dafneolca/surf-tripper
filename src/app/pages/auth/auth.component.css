@@ -1,7 +1,7 @@
 button {
   font-size: 50px;
   display: flex;
-  background-color:rgb(123,212,213);
+  background-color:rgb(0, 129, 144);
   padding: 10px;
   margin: 20px 0px;
   width: 80%;
@@ -21,3 +21,10 @@ button {
   align-items: center;
   flex-flow: column;
 }
+
+
+/* colors used: 
+rgb(224, 219, 142), ->Beige
+rgb(38, 178, 196), -> light Blue
+rgb(0, 129, 144), -> Dark Blue 
+rgb(239, 231, 208); -> white text*/

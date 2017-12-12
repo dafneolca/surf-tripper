@@ -1,28 +1,30 @@
-<form (ngSubmit)="signUpUser(newUser)" #newUser="ngForm" novalidate>
+<form novalidate>
   <h2>Sign Up</h2>
+
+
   <p> User Name: </p>
   <p>
-    <input type="text" name="username" [(ngModel)]="username" required />
+    <input type="text" name="username" [(ngModel)]="newUser.username" required />
   </p>
 
   <p> Level of surf:</p>
   <p>
-    <input type="text" name="experienceLevel" [(ngModel)]="experienceLevel" required />
+    <input type="text" name="experienceLevel" [(ngModel)]="newUser.experienceLevel" required />
   </p>
 
   <p> Description:</p>
   <p>
-    <input type="text" name="description" [(ngModel)]="description" required />
+    <input type="text" name="description" [(ngModel)]="newUser.description" required />
   </p>
 
   <p> Email Address:</p>
   <p>
-    <input type="email" name="email" [(ngModel)]="email" required />
+    <input type="email" name="email" [(ngModel)]="newUser.email" required />
   </p>
 
   <p> Password:</p>
   <p>
-    <input type="password" name="password" [(ngModel)]="password" required #userPassword="ngModel" minlength="6" />
+    <input type="password" name="password" [(ngModel)]="newUser.password" required #userPassword="ngModel" minlength="6" />
   </p>
 
   <div *ngIf="userPassword.errors && (userPassword.dirty || userPassword.touched)">
@@ -31,5 +33,5 @@
     </p>
   </div>
 
-  <button type="submit"> Sign Up </button>
+  <button (click)="signUpUser()" type="submit"> Sign Up </button>
 </form>

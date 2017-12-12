@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SessionService } from '../../services/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,15 +11,13 @@ import { SessionService } from '../../services/session.service';
 export class ProfileComponent implements OnInit {
   user: any;
 
-  constructor(private route: ActivatedRoute, private sessionService: SessionService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private sessionService: SessionService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.sessionService.get(params['id'])
-        .subscribe((data) => {
-          this.user = data;
-        });
-    });
+    this.user = this.sessionService.getUser();
   }
 
 

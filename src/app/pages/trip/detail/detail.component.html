@@ -1,33 +1,44 @@
-<h2> Trip to: {{ trip?.place }} </h2>
-<p>Start Date: </p>
-<p> {{ trip?.startDate | date:'dd/MM/yy' }}</p>
+<app-navbar></app-navbar>
 
-<p>End Date: </p>
-<p> {{ trip?.endDate | date:'dd/MM/yy' }}</p>
+<!-- <h2> Trip to: {{ trip.trip.place }} </h2> -->
+<div id="trip-details">
 
-<p>Created by: </p>
-<p>{{ trip?.owner }}</p>
+  <p>Start Date: {{ trip?.trip.startDate | date:'dd/MM/yy' }}</p>
 
-<p>Description: </p>
-<p>{{ trip?.description }}</p>
+  <p>End Date: {{ trip?.trip.endDate | date:'dd/MM/yy' }}</p>
 
-<p>Attendees: </p>
-<ul>
-  <li *ngFor="let attendee of attendees">
-    {{attendee}}
-  </li>
+  <p>Created by: {{ trip?.user.username }}</p>
 
-</ul>
+  <p>Description: </p>3
+  <p>{{ trip?.trip.description }}</p>
 
 
-<p>{{ trip?.attendees }}</p>
+  <p>Available Spaces: {{availableSpaces}}</p>
 
 
 
-<div *ngIf="attendingTrip===true ">
-  <button (click)="cancelTrip()">Cancel Trip</button>
+  <p>Attendees: </p>
+  <ul>
+    <li *ngFor="let attendee of attendees">
+      {{attendee}}
+    </li>
+
+  </ul>
+
+
+  <p>{{ trip?.trip.attendees }}</p>
+
 </div>
 
-<div *ngIf="attendingTrip==false ">
-  <button (click)="joinTrip()">Join Trip</button>
+<div id="footer">
+  <button (click)="back()">Back</button>
+
+  <div *ngIf="attendingTrip===true ">
+    <button (click)="cancelTrip()">Cancel Trip</button>
+  </div>
+
+  <div *ngIf="attendingTrip==false ">
+    <button (click)="joinTrip()">Join Trip</button>
+  </div>
+
 </div>

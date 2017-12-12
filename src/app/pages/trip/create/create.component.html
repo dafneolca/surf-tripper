@@ -4,16 +4,14 @@
 
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
 
-
   <p>Place: </p>
   <p>
-    <input type="text" name="place" [(ngModel)]="place" required />
+    <input type="text" name="place" [(ngModel)]="trip.place" required />
   </p>
   <!-- 
   <p>Lng:
     <input type="number" name="lng" [(ngModel)]="lng" required />
   </p>
-
 
   <p>Lat:
     <input type="number" name="lat" [(ngModel)]="lat" required />
@@ -21,22 +19,22 @@
 
   <p> Start Date:</p>
   <p>
-    <input type="date" name="startDate" [(ngModel)]="startDate" required />
+    <input type="date" name="startDate" [(ngModel)]="trip.startDate" required />
   </p>
 
   <p> End Date: </p>
   <p>
-    <input type="date" name="endDate" [(ngModel)]="endDate" required />
+    <input type="date" name="endDate" [(ngModel)]="trip.endDate" required />
   </p>
 
   <p> Cost: </p>
   <p>
-    <input type="number" name="cost" [(ngModel)]="cost" required />
+    <input type="number" name="cost" [(ngModel)]="trip.cost" required />
   </p>
 
   <p> Number of Spots Available: </p>
   <p>
-    <input type="number" name="availableSpots" [(ngModel)]="availableSpots" required />
+    <input type="number" name="availableSpots" [(ngModel)]="trip.availableSpots" required />
   </p>
 
   <button type="submit"> Create Event </button>

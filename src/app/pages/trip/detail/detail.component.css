@@ -7,3 +7,23 @@ p{
   display: flex;
   justify-content: center;
 }
+
+#trip-details {
+  background-color: rgb(240, 220, 95);
+  margin: 0px 25px;
+}
+
+ul {
+  list-style-type: none;
+  padding-right: 35px;
+  }
+
+li {
+  text-align: center;
+  }
+
+#footer {
+  padding: 0px 30px;
+  display: flex;
+  justify-content: space-between;
+}

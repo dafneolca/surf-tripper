@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TripService } from '../../../services/trip.service';
+import { SessionService } from '../../../services/session.service';
 import { RouterModule, Router } from '@angular/router';
+import { Trip } from '../../../models/trip';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'app-create',
@@ -9,20 +12,25 @@ import { RouterModule, Router } from '@angular/router';
 })
 
 export class CreateComponent implements OnInit {
-  owner;
+  trip = new Trip({
+    place: '',
+    startDate: '',
+    endDate: '',
+    cost: '',
+    availableSpots: ''
+  });
+  user: User;
 
   submitForm(myForm) {
-    console.log(myForm);
-    console.log('Submitted');
-    this.tripService.createNewTrip(myForm.value);
-    this.router.navigate(['trips']);
-    // this.owner = createReadStream.id   --> get this owner to be the user id of creator
+    this.tripService.createNewTrip(myForm.value, this.user.id);
+    this.router.navigate(['/trips']);
   }
 
 
-  constructor(private tripService: TripService, private router: Router) { }
+  constructor(private tripService: TripService, private router: Router, private sessionService: SessionService) { }
 
   ngOnInit() {
+    this.user = this.sessionService.getUser();
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { SessionService } from '../../../services/session.service';
 import { HttpModule } from '@angular/http';
+import { User } from '../../../models/user';
 
 
 @Component({
@@ -11,11 +12,28 @@ import { HttpModule } from '@angular/http';
 })
 
 export class SignupComponent implements OnInit {
+  newUser = new User({
+    id: null,
+    username: null,
+    experienceLevel: null,
+    description: null,
+    email: null,
+    password: null,
+  });
+
+  error: string;
+
+
+
   constructor(private router: Router, private sessionService: SessionService) { }
 
-  signUpUser(newUser) {
-    this.sessionService.signup(newUser.value).subscribe();
-    this.router.navigate(['trips']);
+  signUpUser() {
+    this.error = null;
+    this.sessionService.signup(this.newUser).subscribe(
+      () => this.router.navigate(['/trips']),
+      (error) => this.error = error
+    );
+
   }
 
   ngOnInit() {

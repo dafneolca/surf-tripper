@@ -20,7 +20,6 @@ export class AuthComponent implements OnInit {
 
     onClickSignup() {
         this.router.navigate(['auth/signup']);
-        console.log('signup');
     }
 
 

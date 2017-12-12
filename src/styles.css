@@ -1,27 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+
 body {
-
-
-  /* background-color:linear-gradient(to right,#36D1DC, #5B86E5); */
+  background-color: rgb(38, 178, 196);
+  /* background: linear-gradient(to bottom right,#36D1DC,#5B86E5); */
   font-family: 'Nunito', sans-serif;
-  background: linear-gradient(to bottom right,#36D1DC,#5B86E5);
   height: 
 }
 
-.topnav
-{
-  /* background-color: #CCCCCC;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000; */
-  display: flex;
-  justify-content: space-around;
-}
 
-.topnav a
-{
-  text-decoration: none;
-  color: #000000;
-  letter-spacing: 1px;
-}
 
-/* background-color: rgb(38, 178, 196); */
+/* 
+colors used: 
+rgb(224, 219, 142), ->Beige
+rgb(38, 178, 196), -> light Blue
+rgb(0, 129, 144), -> Dark Blue */

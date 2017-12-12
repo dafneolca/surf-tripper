@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../../../models/user';
 import { SessionService } from '../../../services/session.service';
 
 @Component({
@@ -7,45 +9,28 @@ import { SessionService } from '../../../services/session.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
 
-  formInfo = {
+// implements OnInit
+export class LoginComponent {
+  error: String;
+
+  user = new User({
     username: '',
     password: ''
-  };
+  });
 
-  user: any;
-  error: string;
 
-  constructor(private session: SessionService, private router: Router) { }
+  constructor(
+    private session: SessionService,
+    private router: Router
+  ) { }
 
   login() {
-    this.session.login(this.formInfo).subscribe();
-    this.router.navigate(['trips']);
+    this.error = 'Username or Password incorrect';
+    this.session.login(this.user)
+      .subscribe(
+      () => this.router.navigate(['/trips']),
+      (err) => this.error = err
+      );
   }
-
-
-  ngOnInit() {
-  }
-
-
-
-
-
-
-
-
-
-  // loggedIn = false;
-  // constructor(private router: Router) { }
-
-  // ngOnInit() {
-  // }
-
-  // submitForm(myForm) {
-  //   console.log(myForm);
-  //   this.loggedIn = true;
-  //   console.log(this.loggedIn);
-  //   this.router.navigate(['trips']);
-  // }
 }

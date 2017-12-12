@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { SessionService } from './services/session.service';
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +9,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  login = true;
-  title = 'Surf Tripper';
+  loading = true;
+  anon: boolean;
+  user: User;
+  title: 'Surf Tripper';
+
+
+
+
+  constructor(
+    private sessionService: SessionService,
+    private router: Router
+  ) { }
 
   loadLogin() {
-    console.log('logging in');
   }
 
   loadSignup() {
-    console.log('sign up');
   }
 }

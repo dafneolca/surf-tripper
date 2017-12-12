@@ -1,39 +1,86 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
 
+
+import { environment } from '../../environments/environment';
+import { User } from '../models/user';
+
+const apiUrl = environment.apiUrl + '/auth';
 
 @Injectable()
 export class SessionService {
   BASE_URL = 'http://localhost:3000';
+  private loaded = false;
+  private user: User;
+  private userChange: Subject<User | null> = new Subject();
 
-  constructor(private httpClient: HttpClient) { }
+  // Observable string stream
+  userChange$ = this.userChange.asObservable();
 
-  signup(user) {
-    console.log(user);
-    return this.httpClient.post(`${this.BASE_URL}/auth/signup`, user);
+  constructor(private http: Http) { }
 
+  private setUser(user: User = null) {
+    this.loaded = true;
+    this.user = user;
+    this.userChange.next(user);
   }
 
-  get(id) {
-    return this.httpClient.get(`${this.BASE_URL}/user/${id}`);
+  signup(user: User) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.post(apiUrl + '/signup', user, options)
+      .map(res => {
+        this.setUser(new User(res.json()));
+        return user;
+      });
   }
 
-  login(user) {
-    return this.httpClient.post(`${this.BASE_URL}/auth/login`, user);
+  login(user: User) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.post(apiUrl + '/login', user, options)
+      .map(res => {
+        this.setUser(new User(res.json()));
+        return user;
+      });
   }
 
-  logout(user) {
-    return this.httpClient.post(`${this.BASE_URL}/auth/logout`, user);
+  logout() {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.post(apiUrl + '/logout', {}, options)
+      .map(res => {
+        this.setUser();
+        return null;
+      });
   }
 
-  isLoggedIn(user) {
-    return this.httpClient.get(`${this.BASE_URL}/auth/loggedin`, user);
+  me() {
+    // if (this.loaded) {
+    //   return Promise.resolve(this.user);
+    // }
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(apiUrl + '/me', options)
+      .toPromise()
+      .then(res => {
+        const user = new User(res.json());
+        this.setUser(user);
+        return user;
+      })
+      .catch((err) => {
+        if (err.status === 404) {
+          this.setUser();
+        }
+      });
   }
-  getPrivateData(user) {
-    return this.httpClient.get(`${this.BASE_URL}/auth/private`, user);
+
+  getUser() {
+    return this.user;
   }
-
-
-
 }
