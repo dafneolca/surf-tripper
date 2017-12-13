@@ -1,13 +1,15 @@
-.topnav
-{
+.topnav {
   display: flex;
   justify-content: space-around;
+  background-color: white;
 }
 
-.topnav a
-{
+.topnav a {
   text-decoration: none;
   color: #000000;
   letter-spacing: 1px;
-  background-color: pink;
+}
+
+h5 {
+  text-align: center;
 }

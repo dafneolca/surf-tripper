@@ -1,5 +1,7 @@
 <!-- ----------------- NAV BAR START ----------------- -->
-<p>Hello, {{user?.username}}</p>
+<h5>Hello, {{user?.username}}
+  <button (click)="logout()">Logout</button>
+</h5>
 <div *ngIf="!login">
   <!-- if user is logged in -->
   <div class="topnav" id="myTopnav">
@@ -8,13 +10,10 @@
     <a [routerLink]="['/profile']">Profile</a>
     <!--profile/{{user._id}}-->
 
-    <!-- Link below not working -->
-    <!-- <a [routerLink]="['/profile', users._id]">Profile</a> -->
-    <button (click)="logout()">Logout</button>
+
   </div>
 
 
-  <!-- <li *ngFor="let trip of trips " a [routerLink]="[ '/trips', trip._id] "> -->
 
 </div>
 

@@ -7,10 +7,19 @@
 
   <p>End Date: {{ trip?.trip.endDate | date:'dd/MM/yy' }}</p>
 
-  <p>Created by: {{ trip?.user.username }}</p>
+  <p>Created by:
+    <a [routerLink]="['/profile']"> {{ trip?.user.username }} </a>
+  </p>
 
-  <p>Description: </p>3
+
+
+
+
+  <p>Description: </p>
   <p>{{ trip?.trip.description }}</p>
+
+  <p>Cost: {{ trip?.trip.cost }}</p>
+
 
 
   <p>Available Spaces: {{availableSpaces}}</p>

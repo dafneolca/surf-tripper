@@ -11,17 +11,12 @@ button {
   height: 100px;
 }
 
-
-
-
 .page {
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
 }
-
 
 /* colors used: 
 rgb(224, 219, 142), ->Beige
