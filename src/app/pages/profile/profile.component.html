@@ -1,8 +1,33 @@
 <app-navbar></app-navbar>
 
+<h3>Profile</h3>
+<div id="profileInfo">
 
-<p>Name: {{user?.username | json}}</p>
-<p>Surf Level: {{user?.username | json}}</p>
-<p>Description: {{user?.username | json}}</p>
-<p>Trips Attending: {{user?.username | json}} </p>
-<p>Trips Created: {{user?.username | json}} </p>
+
+  <p>Name: {{user?.username }}</p>
+  <p>Surf Level: {{user?.surfLevel }}</p>
+  <p>Description: </p>
+  <p>{{user?.description}}</p>
+
+  <p>Trips Attending:</p>
+
+  <p>{{user?.tripsAttending | json}} </p>
+
+
+  <p>Trips Created: </p>
+
+  <!--
+    <li *ngFor="let trip of trips" a [routerLink]="['/trips', trip._id]">
+
+    <p>{{ trip.name }}</p> 
+
+
+
+  </li>
+-->
+
+
+  <!-- <p>{{user?.tripsCreated | json}} </p> -->
+
+
+</div>

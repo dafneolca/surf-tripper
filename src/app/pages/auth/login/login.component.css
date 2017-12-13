@@ -4,6 +4,7 @@ button {
   display: flex;
   padding: 10px;
   background-color: rgb(0, 129, 144);
+  border-color:  rgb(0, 129, 144);
   font-size: 15px;
   width: 150px;
   justify-content: center;
@@ -28,6 +29,14 @@ p {
   display: flex;
   justify-content: center;
 }
+
+a {
+  /* text-decoration: none; */
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
 
 /* colors used: 
 rgb(224, 219, 142), ->Beige

@@ -17,7 +17,8 @@ export class DetailComponent implements OnInit {
   attendingTrip = false;
   attendees = ['Attendee 1', 'attendee 2'];
   user = null;
-  availableSpaces = 10;
+  availableSpaces = null;
+  tripDescription = null;
   // tripJoined = 'You have joined the trip';
 
   constructor(
@@ -26,15 +27,15 @@ export class DetailComponent implements OnInit {
     private tripService: TripService,
     private router: Router) { }
 
-
-
   back() {
     this.router.navigate(['trips']);
   }
 
   joinTrip() {
+
     // On click ->logged in user is pushed into array of attendees.
     // $scope.attendees.push($scope.form);
+
     this.attendingTrip = true;
     this.availableSpaces--;
     this.user = this.sessionService.getUser();

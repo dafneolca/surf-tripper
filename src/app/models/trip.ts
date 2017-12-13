@@ -4,6 +4,7 @@ export class Trip {
   endDate: Date;
   cost: number;
   availableSpots: number;
+  description: string;
 
   constructor(obj: Object = {}) {
     Object.assign(this, obj);

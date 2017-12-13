@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { SessionService } from '../../services/session.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -12,12 +10,11 @@ export class ProfileComponent implements OnInit {
   user: any;
 
   constructor(
-    private route: ActivatedRoute,
-    private sessionService: SessionService,
-    private router: Router) { }
+    private sessionService: SessionService, ) { }
 
   ngOnInit() {
     this.user = this.sessionService.getUser();
+    console.log(this.user)
   }
 
 

@@ -1,7 +1,6 @@
 <form novalidate>
   <h2>Sign Up</h2>
 
-
   <p> User Name: </p>
   <p>
     <input type="text" name="username" [(ngModel)]="newUser.username" required />
@@ -33,5 +32,7 @@
     </p>
   </div>
 
-  <button (click)="signUpUser()" type="submit"> Sign Up </button>
+  <div id="button-div">
+    <button (click)="signUpUser()" type="button">Sign Up</button>
+  </div>
 </form>

@@ -1,18 +1,17 @@
 <app-navbar></app-navbar>
 
-<!-- <h2> Trip to: {{ trip.trip.place }} </h2> -->
+
+<!--  //BUG: CANNOT READ PROPERTY OF TRIP-->
+<h3> {{ trip?.trip.place }} </h3>
 <div id="trip-details">
+
 
   <p>Start Date: {{ trip?.trip.startDate | date:'dd/MM/yy' }}</p>
 
   <p>End Date: {{ trip?.trip.endDate | date:'dd/MM/yy' }}</p>
 
-  <p>Created by:
-    <a [routerLink]="['/profile']"> {{ trip?.user.username }} </a>
+  <p>Created by: {{ trip?.user.username }}
   </p>
-
-
-
 
 
   <p>Description: </p>
@@ -22,20 +21,20 @@
 
 
 
-  <p>Available Spaces: {{availableSpaces}}</p>
+  <p>Available Spaces: {{trip?.trip.availableSpaces}}</p>
 
 
 
   <p>Attendees: </p>
   <ul>
     <li *ngFor="let attendee of attendees">
-      {{attendee}}
+      <p>{{ trip?.trip.attendees }}</p>
     </li>
 
   </ul>
 
 
-  <p>{{ trip?.trip.attendees }}</p>
+
 
 </div>
 

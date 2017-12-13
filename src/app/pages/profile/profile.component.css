@@ -2,3 +2,15 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+#profileInfo{
+  background-color: rgb(224, 219, 142);
+  margin: 30px;
+  border-radius: 5px;
+  padding: 10px 35px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+}

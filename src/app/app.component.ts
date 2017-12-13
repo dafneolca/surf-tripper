@@ -14,9 +14,6 @@ export class AppComponent {
   user: User;
   title: 'Surf Tripper';
 
-
-
-
   constructor(
     private sessionService: SessionService,
     private router: Router

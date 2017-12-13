@@ -1,16 +1,22 @@
-h2 {
+h3 {
   display: flex;
   justify-content: center;
 }
 
 p{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 #trip-details {
-  background-color: rgb(240, 220, 95);
-  margin: 0px 25px;
+  background-color: rgb(224, 219, 142);
+  /* margin: 0px 25px; */
+  border-radius: 5px;
+  margin: 30px 25px;
+  padding: 5px;
+  padding: 150px;
+  border-radius: 5px;
+  padding: 10px 35px;
 }
 
 ul {
@@ -19,11 +25,20 @@ ul {
   }
 
 li {
-  text-align: center;
+  /* text-align: center; */
   }
 
 #footer {
   padding: 0px 30px;
   display: flex;
   justify-content: space-between;
+}
+
+button {
+  background-color: rgb(0, 129, 144);
+  font-size: 15px;
+  padding: 10px 15px;
+  border-color: rgb(0, 129, 144);
+  width: 120px;
+  margin-bottom: 25px;
 }

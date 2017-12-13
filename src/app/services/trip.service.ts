@@ -9,7 +9,6 @@ export class TripService {
   constructor(private httpClient: HttpClient) { }
 
   createNewTrip(trip, userID) {
-
     const tripObj = {
       trip,
       userID
@@ -25,8 +24,8 @@ export class TripService {
     return this.httpClient.get(`${this.BASE_URL}/trip`);
   }
 
-  // joinTrip() {
-  //   this.httpClient.post(`${this.BASE_URL}/trip/${id}`, users).subscribe();
-  // }
+  joinTrip(tripId, userId) {
+    this.httpClient.post(`${this.BASE_URL}/trip/${tripId}`, userId).subscribe();
+  }
 
 }

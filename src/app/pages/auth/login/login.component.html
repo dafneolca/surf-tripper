@@ -17,6 +17,9 @@
 
 </form>
 <div class="button-div">
-  <button (click)="login()"> login </button>
+  <button (click)="login()">Login</button>
 </div>
 <p class="error"> {{ error }} </p>
+
+
+<a [routerLink]="['/auth/signup']">Click here to sign up</a>

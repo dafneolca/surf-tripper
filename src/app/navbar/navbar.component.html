@@ -1,13 +1,20 @@
 <!-- ----------------- NAV BAR START ----------------- -->
-<h5>Hello, {{user?.username}}
-  <button (click)="logout()">Logout</button>
-</h5>
+
+<div id="userLogout">
+  <h4>Hello, {{user?.username}} </h4>
+
+
+</div>
+
+
+
 <div *ngIf="!login">
   <!-- if user is logged in -->
   <div class="topnav" id="myTopnav">
     <a [routerLink]="['/trips']">Trips</a>
     <a [routerLink]="['/create']">Create</a>
     <a [routerLink]="['/profile']">Profile</a>
+    <button (click)="logout()">Logout</button>
     <!--profile/{{user._id}}-->
 
 
