@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class DetailComponent implements OnInit {
+  tripId;
   trip;
   place = null;
   attendingTrip = false;
@@ -26,6 +27,18 @@ export class DetailComponent implements OnInit {
     private tripService: TripService,
     private router: Router) { }
 
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.tripId = params['id'];
+      this.tripService.get(this.tripId)
+        .subscribe((data) => {
+          this.trip = data;
+          console.log(this.trip);
+        });
+    });
+    this.user = this.sessionService.getUser();
+  }
+
   back() {
     this.router.navigate(['trips']);
   }
@@ -33,13 +46,10 @@ export class DetailComponent implements OnInit {
   joinTrip() {
     // this.attendingTrip = true;
     // this.availableSpaces--;
-    this.route.params.subscribe(params => {
-      this.tripService.joinTrip(this.user.id, params['id'])
-        .subscribe((data) => {
-          this.trip = data;
-          console.log(this.trip);
-        });
-    });
+    this.tripService.joinTrip(this.user.id, this.tripId)
+      .subscribe(() => {
+        this.router.navigate(['/profile']);
+      });
   }
 
   cancelTrip() {
@@ -51,14 +61,4 @@ export class DetailComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.tripService.get(params['id'])
-        .subscribe((data) => {
-          this.trip = data;
-          console.log(this.trip);
-        });
-    });
-    this.user = this.sessionService.getUser();
-  }
 }

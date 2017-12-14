@@ -1,34 +1,52 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { DetailComponent } from '../pages/trip/detail/detail.component';
-import { ProfileComponent } from '../pages/profile/profile.component';
-import { CreateComponent } from '../pages/trip/create/create.component';
-
+import { Http, Response, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class TripService {
+
   BASE_URL = 'http://localhost:3000';
-  constructor(private httpClient: HttpClient) { }
+
+  constructor(private http: Http) { }
 
   createNewTrip(trip, userID) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
     const tripObj = {
       trip,
       userID
     };
-    this.httpClient.post(this.BASE_URL + '/trip', tripObj).subscribe();
+    return this.http.post(this.BASE_URL + '/trip', tripObj, options)
+      .map(res => res.json());
   }
 
   get(id) {
-    return this.httpClient.get(`${this.BASE_URL}/trip/${id}`);
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(`${this.BASE_URL}/trip/${id}`, options)
+      .map(res => res.json());
   }
 
   getList() {
-    return this.httpClient.get(`${this.BASE_URL}/trip`);
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(`${this.BASE_URL}/trip`, options)
+      .map(res => res.json());
   }
 
   joinTrip(userId, tripID) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
     console.log('USERID::::::  ', userId);
-    return this.httpClient.post(this.BASE_URL + '/trip/' + tripID + '/join', userId);
+    const joinObj = {
+      userId
+    };
+    return this.http.post(this.BASE_URL + '/trip/' + tripID + '/join', joinObj, options)
+      .map(res => res.json());
   }
 
 }

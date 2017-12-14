@@ -24,11 +24,8 @@ export class CreateComponent implements OnInit {
   user: User;
 
   submitForm(myForm) {
-    this.tripService.createNewTrip(myForm.value, this.user.id);
-
-
-    this.router.navigate(['/trips']);
-
+    this.tripService.createNewTrip(myForm.value, this.user.id)
+      .subscribe(() => this.router.navigate(['/trips']));
   }
 
 

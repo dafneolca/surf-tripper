@@ -35,10 +35,10 @@ const routes: Routes = [
   { path: 'auth/login', canActivate: [AnonGuard], component: LoginComponent },
   { path: 'auth/signup', canActivate: [AnonGuard], component: SignupComponent },
   { path: 'trips', canActivate: [AuthGuard], component: TripsComponent },
-  { path: 'trips/:id', component: DetailComponent },
-  { path: 'create', component: CreateComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'profile/:id', component: ProfileComponent },
+  { path: 'trips/:id', canActivate: [AuthGuard], component: DetailComponent },
+  { path: 'create', canActivate: [AuthGuard], component: CreateComponent },
+  { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent },
+  { path: 'profile/:id', canActivate: [AuthGuard], component: ProfileComponent },
 ];
 
 @NgModule({

@@ -2,33 +2,33 @@
 
 
 <!--  //BUG: CANNOT READ PROPERTY OF TRIP-->
-<h3> {{ trip?.trip.place }} </h3>
+<h3> {{ trip?.place }} </h3>
 <div id="trip-details">
 
 
-  <p>Start Date: {{ trip?.trip.startDate | date:'dd/MM/yy' }}</p>
+  <p>Start Date: {{ trip?.startDate | date:'dd/MM/yy' }}</p>
 
-  <p>End Date: {{ trip?.trip.endDate | date:'dd/MM/yy' }}</p>
+  <p>End Date: {{ trip?.endDate | date:'dd/MM/yy' }}</p>
 
-  <p>Created by: {{ trip?.user.username }}
+  <p>Created by: {{ trip?.owner.username }}
   </p>
 
 
   <p>Description: </p>
-  <p>{{ trip?.trip.tripDescription }}</p>
+  <p>{{ trip?.tripDescription }}</p>
 
-  <p>Cost: {{ trip?.trip.cost }}</p>
+  <p>Cost: {{ trip?.cost }}</p>
 
 
 
-  <p>Available Spaces: {{trip?.trip.availableSpaces}}</p>
+  <p>Available Spaces: {{trip?.availableSpaces}}</p>
 
 
 
   <p>Attendees: </p>
   <ul>
-    <li *ngFor="let attendee of attendees">
-      <p>{{ trip?.trip.attendees }}</p>
+    <li *ngFor="let attendee of trip?.attendees">
+      <p>{{ attendee.username }}</p>
     </li>
 
   </ul>
