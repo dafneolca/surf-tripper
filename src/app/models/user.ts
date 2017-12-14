@@ -3,7 +3,7 @@ export class User {
   username: String;
   password: String;
   experienceLevel: String;
-  description: String;
+  userDescription: String;
   email: String;
 
   constructor(obj: Object = {}) {

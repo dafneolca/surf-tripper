@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DetailComponent } from '../pages/trip/detail/detail.component';
 import { ProfileComponent } from '../pages/profile/profile.component';
+import { CreateComponent } from '../pages/trip/create/create.component';
+
 
 @Injectable()
 export class TripService {
@@ -24,8 +26,9 @@ export class TripService {
     return this.httpClient.get(`${this.BASE_URL}/trip`);
   }
 
-  joinTrip(tripId, userId) {
-    this.httpClient.post(`${this.BASE_URL}/trip/${tripId}`, userId).subscribe();
+  joinTrip(userId, tripID) {
+    console.log('USERID::::::  ', userId);
+    return this.httpClient.post(this.BASE_URL + '/trip/' + tripID + '/join', userId);
   }
 
 }

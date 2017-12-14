@@ -2,9 +2,10 @@ export class Trip {
   place: string;
   startDate: Date;
   endDate: Date;
+  tripDescription: string;
   cost: number;
   availableSpots: number;
-  description: string;
+  attendees: [string];
 
   constructor(obj: Object = {}) {
     Object.assign(this, obj);

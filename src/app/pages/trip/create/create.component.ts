@@ -16,16 +16,19 @@ export class CreateComponent implements OnInit {
     place: '',
     startDate: '',
     endDate: '',
+    tripDescription: '',
     cost: '',
     availableSpots: '',
-    description: ''
+    attendees: ['']
   });
   user: User;
 
   submitForm(myForm) {
     this.tripService.createNewTrip(myForm.value, this.user.id);
+
+
     this.router.navigate(['/trips']);
-    console.log(this.trip);
+
   }
 
 

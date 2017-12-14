@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css'],
-  // providers: [TripService]
 })
 
 export class DetailComponent implements OnInit {
@@ -32,15 +31,15 @@ export class DetailComponent implements OnInit {
   }
 
   joinTrip() {
-
-    // On click ->logged in user is pushed into array of attendees.
-    // $scope.attendees.push($scope.form);
-
-    this.attendingTrip = true;
-    this.availableSpaces--;
-    this.user = this.sessionService.getUser();
-    this.attendees.push(this.user);
-
+    // this.attendingTrip = true;
+    // this.availableSpaces--;
+    this.route.params.subscribe(params => {
+      this.tripService.joinTrip(this.user.id, params['id'])
+        .subscribe((data) => {
+          this.trip = data;
+          console.log(this.trip);
+        });
+    });
   }
 
   cancelTrip() {
@@ -60,5 +59,6 @@ export class DetailComponent implements OnInit {
           console.log(this.trip);
         });
     });
+    this.user = this.sessionService.getUser();
   }
 }

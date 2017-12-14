@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
     id: null,
     username: null,
     experienceLevel: null,
-    description: null,
+    userDescription: null,
     email: null,
     password: null,
   });
