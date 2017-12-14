@@ -49,4 +49,18 @@ export class TripService {
       .map(res => res.json());
   }
 
+  getAttending() {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(this.BASE_URL + '/trip/attending', options)
+      .map(res => res.json());
+  }
+
+  getCreated() {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(this.BASE_URL + '/trip/created', options)
+      .map(res => res.json());
+  }
+
 }

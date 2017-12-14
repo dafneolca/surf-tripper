@@ -1,7 +1,7 @@
 .topnav {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(0, 129, 144);
+  background-color: rgb(38, 178, 196);
 }
 
 .topnav a {

@@ -1,20 +1,20 @@
 <app-navbar></app-navbar>
 
 <h3>Profile</h3>
-<div id="profileInfo">
 
+<section id="profileInfo">
 
-  <p>Name: {{user?.username }}</p>
-  <p>Surf Level: {{user?.surfLevel}}</p>
-  <p>Description: </p>
-  <p>{{user?.description}}</p>
+  <p>
+    <label>Name:</label> {{user?.username }}</p>
 
-  <p>Trips Attending:</p>
+  <p>
+    <label>Surf Level:</label> {{user?.experienceLevel}}</p>
 
-  <p>{{user?.tripsAttending | json}} </p>
+  <p>
+    <label>Description:</label>
+  </p>
 
-
-  <p>Trips Created: </p>
+  <p>{{user?.userDescription}}</p>
 
   <!--
     <li *ngFor="let trip of trips" a [routerLink]="['/trips', trip._id]">
@@ -29,5 +29,39 @@
 
   <!-- <p>{{user?.tripsCreated | json}} </p> -->
 
+</section>
 
+<!--
+<div *ngIf="attending">
+  <h3>Trips Attending:</h3>
+
+  <section>
+
+    <ul *ngIf="attending.length">
+      <li *ngFor="let trip of attending">
+        <a [routerLink]="['/trips', trip._id]">{{trip|json}}</a>
+      </li>
+    </ul>
+    <div *ngIf="!attending.length">You are not yet attending any trips.
+      <a [routerLink]="['/trips']">Find one to join</a>.</div>
+
+  </section>
 </div>
+
+<div *ngIf="created">
+  <h3>Trips Created: </h3>
+
+  <section>
+
+    <ul *ngIf="created.length">
+      <li *ngFor="let trip of created">
+        <a [routerLink]="['/trips', trip._id]">{{trip|json}}</a>
+      </li>
+    </ul>
+    <div *ngIf="!created.length">You have not yet created a trip.
+      <a [routerLink]="['/create']">Create one now</a>.</div>
+
+  </section>
+</div>
+
+-->

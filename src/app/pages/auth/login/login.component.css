@@ -10,10 +10,15 @@ button {
   justify-content: center;
 }
 
+  
 input {
   width: 80%;
+  background: rgb(203, 231, 250);
+  border: 1px solid #333;
+  padding: 5px 10px;
+  font-size: 15px;
 }
-
+  
 .button-div {
   display: flex;
   justify-content: center;

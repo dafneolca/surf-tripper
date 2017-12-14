@@ -13,11 +13,11 @@ ul {
   }
 
 li {
-  background-color: rgb(224, 219, 142);
   text-align: center;
   margin: 30px 0px;
   padding: 5px;
   border-radius: 5px;
+  border: rgb(38, 178, 196) solid 2px;
   }
 
   a {
