@@ -16,22 +16,9 @@
 
   <p>{{user?.userDescription}}</p>
 
-  <!--
-    <li *ngFor="let trip of trips" a [routerLink]="['/trips', trip._id]">
-
-    <p>{{ trip.name }}</p> 
-
-
-
-  </li>
--->
-
-
-  <!-- <p>{{user?.tripsCreated | json}} </p> -->
 
 </section>
 
-<!--
 <div *ngIf="attending">
   <h3>Trips Attending:</h3>
 
@@ -39,7 +26,8 @@
 
     <ul *ngIf="attending.length">
       <li *ngFor="let trip of attending">
-        <a [routerLink]="['/trips', trip._id]">{{trip|json}}</a>
+        <a [routerLink]="['/trips', trip._id]">
+          {{trip.place}}</a>
       </li>
     </ul>
     <div *ngIf="!attending.length">You are not yet attending any trips.
@@ -48,6 +36,10 @@
   </section>
 </div>
 
+
+
+
+
 <div *ngIf="created">
   <h3>Trips Created: </h3>
 
@@ -55,7 +47,7 @@
 
     <ul *ngIf="created.length">
       <li *ngFor="let trip of created">
-        <a [routerLink]="['/trips', trip._id]">{{trip|json}}</a>
+        <a [routerLink]="['/trips', trip._id]">{{trip.place}}</a>
       </li>
     </ul>
     <div *ngIf="!created.length">You have not yet created a trip.
@@ -63,5 +55,3 @@
 
   </section>
 </div>
-
--->

@@ -61,9 +61,6 @@ export class SessionService {
   }
 
   me() {
-    // if (this.loaded) {
-    //   return Promise.resolve(this.user);
-    // }
     const options = new RequestOptions();
     options.withCredentials = true;
     return this.http.get(apiUrl + '/me', options)

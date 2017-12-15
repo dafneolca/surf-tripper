@@ -22,6 +22,5 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.sessionService.logout().subscribe(() => this.router.navigate(['/']));
-
   }
 }

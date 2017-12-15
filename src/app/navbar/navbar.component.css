@@ -2,12 +2,15 @@
   display: flex;
   justify-content: space-around;
   background-color: rgb(38, 178, 196);
+  color: rgb(239, 231, 208);
 }
 
 .topnav a {
   text-decoration: none;
-  color: #000000;
+  color: rgb(239, 231, 208);
+  /* color: #000000; */
   letter-spacing: 1px;
+  font-size: 15px;
 }
 
 h5 {
@@ -21,5 +24,6 @@ h5 {
 }
 
 button {
-  text-size: 15px;
+  font-size: 13px;
+  color: rgb(239, 231, 208);
 }
