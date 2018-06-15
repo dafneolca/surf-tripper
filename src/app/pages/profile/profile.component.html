@@ -3,36 +3,27 @@
 <h3>Profile</h3>
 
 <section id="profileInfo">
-
   <p>
     <label>Name:</label> {{user?.username }}</p>
-
   <p>
     <label>Surf Level:</label> {{user?.experienceLevel}}</p>
-
   <p>
     <label>Description:</label>
   </p>
-
   <p>{{user?.userDescription}}</p>
-
-
 </section>
 
 <div *ngIf="attending">
   <h3>Trips Attending:</h3>
-
   <section>
-
     <ul *ngIf="attending.length">
       <li *ngFor="let trip of attending">
-        <a [routerLink]="['/trips', trip._id]">
-          {{trip.place}}</a>
+        <a [routerLink]="['/trips', trip._id]">{{trip.place}}</a>
       </li>
     </ul>
     <div *ngIf="!attending.length">You are not yet attending any trips.
-      <a [routerLink]="['/trips']">Find one to join</a>.</div>
-
+      <a [routerLink]="['/trips']">Find one to join</a>
+    </div>
   </section>
 </div>
 

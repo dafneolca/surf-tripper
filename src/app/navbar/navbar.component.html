@@ -2,11 +2,7 @@
 
 <div id="userLogout">
   <h4>Hello, {{user?.username}} </h4>
-
-
 </div>
-
-
 
 <div *ngIf="!login">
   <!-- if user is logged in -->
@@ -15,21 +11,8 @@
     <a [routerLink]="['/create']">Create</a>
     <a [routerLink]="['/profile']">Profile</a>
     <button (click)="logout()">Logout</button>
-    <!--profile/{{user._id}}-->
-
-
   </div>
 
-
-
 </div>
-
-<!-- if user is not logged in -->
-
-<!-- <div class="topnav " id="myTopnav ">
-  <a href="trips ">Trips</a>
-  <a href="/ ">Register/Login</a>
-
-</div> -->
 
 <!-- ----------------- NAV BAR END ----------------- -->

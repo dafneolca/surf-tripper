@@ -28,7 +28,6 @@ export class CreateComponent implements OnInit {
       .subscribe(() => this.router.navigate(['/trips']));
   }
 
-
   constructor(private tripService: TripService, private router: Router, private sessionService: SessionService) { }
 
   ngOnInit() {

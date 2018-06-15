@@ -4,49 +4,27 @@
 <!--  //BUG: CANNOT READ PROPERTY OF TRIP-->
 <h3> {{ trip?.place }} </h3>
 <div id="trip-details">
-
-
   <p>Start Date: {{ trip?.startDate | date:'dd/MM/yy' }}</p>
-
   <p>End Date: {{ trip?.endDate | date:'dd/MM/yy' }}</p>
-
-  <p>Created by: {{ trip?.owner.username }}
-  </p>
-
-
+  <p>Created by: {{ trip?.owner.username }}</p>
   <p>Description: </p>
   <p>{{ trip?.tripDescription }}</p>
-
   <p>Cost: {{ trip?.cost }}</p>
-
-
-
   <p>Available Spaces: {{trip?.availableSpaces}}</p>
-
-
-
   <p>Attendees: </p>
   <ul>
     <li *ngFor="let attendee of trip?.attendees">
       <p>{{ attendee.username }}</p>
     </li>
-
   </ul>
-
-
-
-
 </div>
 
 <div id="footer">
   <button (click)="back()">Back</button>
-
   <div *ngIf="attendingTrip===true ">
     <button (click)="cancelTrip()">Cancel Trip</button>
   </div>
-
   <div *ngIf="attendingTrip==false ">
     <button (click)="joinTrip()">Join Trip</button>
   </div>
-
 </div>
